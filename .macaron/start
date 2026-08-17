@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly SERVE_PATH="${DUFS_SERVE_PATH:-$HOME}"
+
+exec dufs \
+  --bind "0.0.0.0" \
+  --port "$MACARON_AVAILABLE_PORT" \
+  --allow-all \
+  "$SERVE_PATH"

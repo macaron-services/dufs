@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! command -v dufs &> /dev/null; then
+    echo "ℹ️  dufs is not available, do you want to install it with Homebrew? (y/n): "
+    read -r answer
+    if [[ $answer == "y" ]]; then
+        echo "🔄 Installing dufs with Homebrew..."
+        brew install dufs
+    else
+        echo "🟡 Ok, keep in mind you may need to install it manually later."
+        exit 1
+    fi
+fi
